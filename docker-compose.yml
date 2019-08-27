@@ -1,0 +1,59 @@
+version: '3.7'
+
+services:
+  db:
+    image: postgres:11-alpine
+    env_file:
+      - dataPlane.env
+    ports:
+      - "5433:5432"
+
+  backend:
+    depends_on:
+      - db
+      - d-transformer
+      - u-transformer
+    image: sumanthrudder/rudder-server
+
+    entrypoint: sh -c './wait-for db:5432 -- rudder-server'
+
+    ports:
+      - "8080:8080"
+    env_file:
+      - dataPlane.env
+
+  d-transformer:
+    image: sumanthrudder/rudder-dest-transformer 
+    ports:
+      - "9090:9090"
+    env_file:
+      - dataPlane.env
+
+  u-transformer:
+    image: sumanthrudder/rudder-user-transformer 
+    ports:
+      - "9292:9292"
+    env_file:
+      - dataPlane.env
+
+  config-backend:
+    image: sumanthrudder/rudder-config-backend 
+    ports:
+      - "5000:5000"
+    env_file:
+      - controlPlane.env
+    entrypoint: sh -c './wait-for config-db:5432 -- npm run typeorm migration:run && npm start'
+  
+  web:
+    image: sumanthrudder/rudder-webapp
+    ports:
+      - "3000:3000"
+    env_file:
+      - controlPlane.env
+
+  config-db:
+    image: postgres:11-alpine
+    env_file:
+      - controlPlane.env
+    ports:
+      - "5434:5432"
