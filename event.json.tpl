@@ -36,16 +36,16 @@
                     },
                     "rl_user_agent": "Dalvik/2.1.0 (Linux; U; Android 9; Android SDK built for x86 Build/PSR1.180720.075)"
                 },
-                "rl_event": "Test Track",
+                "rl_event": "Demo Track",
                 "rl_integrations": {
                     "AD": true,
                     "AF": true
                 },
                 "rl_message_id": "1566904375469-1baf3108-647a-4f20-9867-3072056a07f5",
                 "rl_properties": {
-                    "label": "",
-                    "category": "Test Category",
-                    "value": ""
+                    "label": "Demo Label",
+                    "category": "Demo Category",
+                    "value": "Demo Value"
                 },
                 "rl_timestamp": "2019-08-27 11:12:55+0000",
                 "rl_type": "track"
