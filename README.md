@@ -1,7 +1,9 @@
-# rudder-oss
+# Rudder
 
 Rudder is an open source, private-cloud Segment alternative built with a focus on Privacy and Security written in Go and React. " https://rudderlabs.com.
  
+Main Page
+=========
 
 ![image](https://user-images.githubusercontent.com/52487451/64673168-0b802180-d48b-11e9-8535-9292eff0aa45.png)
 
