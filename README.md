@@ -30,7 +30,7 @@ Architecture
 
 The following is a  brief overview of the major components of Rudder Stack.
 
-######Rudder Control Plane
+###### Rudder Control Plane
 
 The UI to configure the sources, destinations etc. It consists of 
 
@@ -39,13 +39,15 @@ The UI to configure the sources, destinations etc. It consists of
 **Customer webapp**: This is the front end application that enables the teams to set up their customer data routing with Rudder. These will show you high-level data on event deliveries and more stats. It also provides access to custom enterprise features. 
  
 
-######Rudder Data Plane  
+###### Rudder Data Plane  
 
 Data plane is our core engine that receives the events, stores, transforms them and reliably delivers to the destinations. This engine can be customized to your business requirements by a wide variety of configuration options. Eg. You can choose to enable backing up events to any S3 bucket, maximum size of the event for server to reject malicious requests. Sticking to defaults will work well for most of the companies but you have the flexibility to customize the data plane.
 
 The data plane uses Postgres as the store for events. We built our own streaming framework on top of Postgres – that’s a topic for a future blog post. Reliable delivery and ordering of the events are the first principles in our design.
 
-**Rudder Destination Transformation**: Conversion of events from Rudder format into destination specific format is handled by the transformation module. The transformation codes are written in Javascript. I
+###### Rudder Destination Transformation
+
+Conversion of events from Rudder format into destination specific format is handled by the transformation module. The transformation codes are written in Javascript. I
 
 The following blogs provide an overview of our transformation module
 
@@ -56,9 +58,13 @@ https://rudderlabs.com/transformations-in-rudder-part-2/
 If you are missing a transformation, please feel free to add it to the repository.
 
 
-**Rudder User Transformation**: Rudder also supports user specific transformations  for real time operations like aggregation, sampling, modifying events etc. The following blog describes one real life use case of the transformation module
+###### Rudder User Transformation
+
+Rudder also supports user specific transformations  for real time operations like aggregation, sampling, modifying events etc. The following blog describes one real life use case of the transformation module
 
 https://rudderlabs.com/customer-case-study-casino-game/
 
 
-######Client SDKs: The client SDKs provide APIs collecting events and sending it to the Rudder Backend.
+###### Client SDKs
+
+The client SDKs provide APIs collecting events and sending it to the Rudder Backend.
