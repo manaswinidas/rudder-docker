@@ -15,8 +15,8 @@ Instructions
 
 1. Checkout this repo
 2. Run the command `docker-compose up` to bring up all the services.
-3. If you already have a Google Analytics account, keep the tracking ID handy. If not, please create one and keep it for testing.
-4. Go to http://localhost:3000 to set up source and destinations. Add a new source from the dropdown for Android/iOS source definitions. Configure your Google Analytics destination with the right trackingID.
+3. If you already have a Google Analytics account, keep the tracking ID handy. If not, please create one and get the tracking ID.
+4. Go to http://localhost:3000 to set up source and destinations. Add a new source from the dropdown for Android/iOS source definitions. Configure your Google Analytics destination with the tracking ID from step above.
 
 5. We have bundled a shell script that can generate test events. Get the “writeKey” from our app dashboard and then run the following command. Run `./generate-event <writeKeyHere>`
  The script generates a sample event and sends it to the backend container that is running in docker. Based on our destination configuration, the backend will transform the event and forward it to the configured destination.
