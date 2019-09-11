@@ -1,6 +1,6 @@
 # Rudder
 
-Rudder is an open source, private-cloud Segment alternative built with a focus on Privacy and Security written in Go and React. " https://rudderlabs.com.
+Rudder is an open source Segment alternative built with a focus on Privacy and Security written in Go and React. " https://rudderlabs.com.
  
 Main Page
 =========
