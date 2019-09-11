@@ -1,18 +1,12 @@
 # rudder-oss
 
-Rudder is an open source, private-cloud Segment alternative built with a focus on Privacy and Security for Enterprises, written in Go and React. " https://rudderlabs.com.
+Rudder is an open source, private-cloud Segment alternative built with a focus on Privacy and Security written in Go and React. " https://rudderlabs.com.
  
-
-Setup
-=====
-
-The code is distributed over a few github repositories (links at the end of this README). This repo has the docker scripts to setup and run Rudder.
-
-The docker setup is the easiest & fastest way to try out Rudder. If you like what you see, you can setup the infra on AWS EC2 using our Terraform scripts. Our support for Azure and GCP is coming soon.
-
 
 Instructions
 ============
+
+The docker setup is the easiest & fastest way to try out Rudder. If you like what you see, you can setup the infra on AWS EC2 using our Terraform scripts. Our support for Azure and GCP is coming soon.
 
 1. Checkout this repo
 2. Run the command `docker-compose up` to bring up all the services.
