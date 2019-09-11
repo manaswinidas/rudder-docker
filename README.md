@@ -1,6 +1,7 @@
 # rudder-oss
 
-Rudder is an open-source alternative to Segment written in Go.
+Rudder is an open source, private-cloud Segment alternative built with a focus on Privacy and Security for Enterprises, written in Go and React. " https://rudderlabs.com.
+ 
 
 Setup
 =====
