@@ -27,8 +27,10 @@ The docker setup is the easiest & fastest way to try out Rudder. If you like wha
 Architecture
 ============
 
-
 The following is a  brief overview of the major components of Rudder Stack.
+
+![image](https://user-images.githubusercontent.com/52487451/64673994-471beb00-d48d-11e9-854f-2c3fbc021e63.jpg)
+
 
 ## Rudder Control Plane
 
