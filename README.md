@@ -7,8 +7,8 @@ Main Page
 
 ![image](https://user-images.githubusercontent.com/52487451/64673168-0b802180-d48b-11e9-8535-9292eff0aa45.png)
 
-Instructions
-============
+Setup Instructions
+==================
 
 The docker setup is the easiest & fastest way to try out Rudder. If you like what you see, you can setup the infra on AWS EC2 using our Terraform scripts. Our support for Azure and GCP is coming soon.
 
@@ -25,7 +25,7 @@ The docker setup is the easiest & fastest way to try out Rudder. If you like wha
 7. You can use our Android, iOS or Javascript SDKs for sending events from your app.
 
 Architecture
-===========
+============
 
 
 The following is a  brief overview of the major components of Rudder Stack.
