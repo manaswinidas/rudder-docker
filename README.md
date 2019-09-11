@@ -24,18 +24,41 @@ The docker setup is the easiest & fastest way to try out Rudder. If you like wha
 
 7. You can use our Android, iOS or Javascript SDKs for sending events from your app.
 
-Source Code
+Architecture
 ===========
 
-The code is distributed over a few repositories. The following blog post describes the major components of the system
 
-https://rudderlabs.com/rudder-an-open-source-alternative-to-segment/
+The following is a  brief overview of the major components of Rudder Stack.
 
-1. Core Backend. Written in Go
-    https://github.com/rudderlabs/rudder-server
+######Rudder Control Plane
 
-2. Transformation Module (which includes functions to convert Rudder Events to Destination specific formats). Written in JS
-   https://github.com/rudderlabs/rudder-transformer
+The UI to configure the sources, destinations etc. It consists of 
 
-3. Rudder clients
-   https://github.com/rudderlabs/rudder-client
+**Config backend**: This is the backend service that handles the sources, destinations and their connections. User management and access based roles are defined here.
+
+**Customer webapp**: This is the front end application that enables the teams to set up their customer data routing with Rudder. These will show you high-level data on event deliveries and more stats. It also provides access to custom enterprise features. 
+ 
+
+######Rudder Data Plane  
+
+Data plane is our core engine that receives the events, stores, transforms them and reliably delivers to the destinations. This engine can be customized to your business requirements by a wide variety of configuration options. Eg. You can choose to enable backing up events to any S3 bucket, maximum size of the event for server to reject malicious requests. Sticking to defaults will work well for most of the companies but you have the flexibility to customize the data plane.
+
+The data plane uses Postgres as the store for events. We built our own streaming framework on top of Postgres – that’s a topic for a future blog post. Reliable delivery and ordering of the events are the first principles in our design.
+
+**Rudder Destination Transformation**: Conversion of events from Rudder format into destination specific format is handled by the transformation module. The transformation codes are written in Javascript. I
+
+The following blogs provide an overview of our transformation module
+
+https://rudderlabs.com/transformations-in-rudder-part-1/
+
+https://rudderlabs.com/transformations-in-rudder-part-2/
+
+If you are missing a transformation, please feel free to add it to the repository.
+
+
+**Rudder User Transformation**: Rudder also supports user specific transformations  for real time operations like aggregation, sampling, modifying events etc. The following blog describes one real life use case of the transformation module
+
+https://rudderlabs.com/customer-case-study-casino-game/
+
+
+######Client SDKs: The client SDKs provide APIs collecting events and sending it to the Rudder Backend.
