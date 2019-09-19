@@ -13,9 +13,9 @@ services:
       - db
       - d-transformer
       - u-transformer
-    image: sumanthrudder/rudder-server
+    image: rudderlabs/rudder-server:v0
 
-    entrypoint: sh -c './wait-for db:5432 -- rudder-server'
+    entrypoint: sh -c './build/wait-for db:5432 -- rudder-server'
 
     ports:
       - "8080:8080"
@@ -23,21 +23,21 @@ services:
       - dataPlane.env
 
   d-transformer:
-    image: sumanthrudder/rudder-dest-transformer 
+    image: rudderlabs/rudder-dest-transformer:v0
     ports:
       - "9090:9090"
     env_file:
       - dataPlane.env
 
   u-transformer:
-    image: sumanthrudder/rudder-user-transformer 
+    image: rudderlabs/rudder-user-transformer:v0
     ports:
       - "9292:9292"
     env_file:
       - dataPlane.env
 
   config-backend:
-    image: sumanthrudder/rudder-config-backend 
+    image: rudderlabs/rudder-config-backend:v0
     ports:
       - "5000:5000"
     env_file:
@@ -45,7 +45,7 @@ services:
     entrypoint: sh -c './wait-for config-db:5432 -- npm run typeorm migration:run && npm start'
   
   web:
-    image: sumanthrudder/rudder-webapp
+    image: rudderlabs/rudder-webapp:v0
     ports:
       - "3000:3000"
     env_file:
