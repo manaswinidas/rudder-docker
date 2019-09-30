@@ -45,7 +45,7 @@ The data plane uses Postgres as the store for events. We built our own streaming
 
 ## Rudder Destination Transformation
 
-Conversion of events from Rudder format into destination specific format is handled by the transformation module. The transformation codes are written in Javascript. I
+Conversion of events from Rudder format into destination specific format is handled by the transformation module. The transformation codes are written in Javascript.
 
 The following blogs provide an overview of our transformation module
 
